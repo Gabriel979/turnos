@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'verified', 'token'
     ];
 
     /**
@@ -26,4 +26,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+    //Para almacenar datos del softdeleting
+    protected $dates=['deleted_at'];
+
+    //En última instancia hay que agregar el campo  DELETED_AT
+
+
+    
+
 }
